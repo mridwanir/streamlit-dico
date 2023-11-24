@@ -2,7 +2,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import streamlit as st
-from babel.numbers import format_currency
 sns.set(style='dark')
 def create_daily_orders_df(df):
     daily_orders_df = df.resample(rule='D', on='order_purchase_timestamp').agg({
@@ -25,9 +24,9 @@ def create_bycity_df(df):
     }, inplace=True)
     
     return bystate_df
-orders_df = pd.read_csv("../Data/orders_dataset.csv")
-customers_df = pd.read_csv("../Data/customers_dataset.csv")
-product_df = pd.read_csv("../top_product.csv")
+orders_df = pd.read_csv("/workspaces/streamlit-dico/Data/orders_dataset.csv")
+customers_df = pd.read_csv("/workspaces/streamlit-dico/Data/customers_dataset.csv")
+product_df = pd.read_csv("/workspaces/streamlit-dico/top_product.csv")
 
 datetime_columns = ["order_purchase_timestamp", "order_delivered_customer_date"]
 orders_df.sort_values(by="order_purchase_timestamp", inplace=True)
