@@ -24,9 +24,9 @@ def create_bycity_df(df):
     }, inplace=True)
     
     return bystate_df
-orders_df = pd.read_csv("https://github.com/mridwanir/streamlit-dico/blob/865844248e79d5f440fb8b789cece54eafde3279/Data/orders_dataset.csv", sep=',')
-customers_df = pd.read_csv("https://github.com/mridwanir/streamlit-dico/blob/865844248e79d5f440fb8b789cece54eafde3279/Data/customers_dataset.csv", sep=',')
-product_df = pd.read_csv("https://github.com/mridwanir/streamlit-dico/blob/865844248e79d5f440fb8b789cece54eafde3279/top_product.csv", sep=',')
+orders_df = pd.read_csv("https://raw.githubusercontent.com/mridwanir/streamlit-dico/main/Data/orders_dataset.csv")
+customers_df = pd.read_csv("https://raw.githubusercontent.com/mridwanir/streamlit-dico/main/Data/customers_dataset.csv")
+product_df = pd.read_csv("https://raw.githubusercontent.com/mridwanir/streamlit-dico/main/top_product.csv")
 
 datetime_columns = ["order_purchase_timestamp", "order_delivered_customer_date"]
 orders_df.sort_values(by="order_purchase_timestamp", inplace=True)
